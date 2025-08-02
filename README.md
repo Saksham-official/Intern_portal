@@ -75,14 +75,6 @@ intern_portal/
 
 ---
 
-## 📸 Screenshots *(Optional – Add Before Submission)*
-
-| Login | Dashboard | Leaderboard |
-|-------|-----------|-------------|
-| ![login](screenshots/login.png) | ![dash](screenshots/dashboard.png) | ![leader](screenshots/leaderboard.png) |
-
----
-
 ## 🔧 How to Run Locally
 
 1. Clone the repository:
