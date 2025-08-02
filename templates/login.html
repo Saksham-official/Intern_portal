@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibrant Intern Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4f46e5;
+            --accent: #ff6584;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .login-box {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transform-style: preserve-3d;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .login-box:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .input-field {
+            transition: all 0.3s ease;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .input-field:focus {
+            border-bottom-color: var(--primary);
+            box-shadow: 0 2px 0 0 var(--primary);
+        }
+        
+        .btn-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+        }
+        
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(108, 99, 255, 0.6);
+        }
+        
+        .btn-gradient:active {
+            transform: translateY(0);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        @media (max-width: 640px) {
+            .login-box {
+                border-radius: 0;
+                min-height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4">
+    <!-- Background particles -->
+    <div id="particles"></div>
+    
+    <!-- Main login container -->
+    <div class="login-box animate__animated animate__fadeIn w-full max-w-md p-8 relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-purple-100 opacity-30"></div>
+        <div class="absolute -bottom-20 -left-20 w-40 h-40 rounded-full bg-indigo-100 opacity-30"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Welcome <span class="text-purple-600">Intern</span></h2>
+                <p class="text-gray-600">Enter your details to access your dashboard</p>
+            </div>
+            
+            <form method="POST" class="space-y-6">
+                <div class="relative">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                    <div class="relative">
+                        <svg class="w-5 h-5 absolute left-3 top-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                        <input 
+                            type="text" 
+                            name="name" 
+                            class="input-field pl-10 pr-4 py-3 w-full bg-gray-50 focus:bg-white rounded-lg focus:outline-none transition-all duration-200" 
+                            placeholder="John Doe" 
+                            required
+                            autocomplete="off"
+                        >
+                    </div>
+                </div>
+                
+                <button 
+                    type="submit" 
+                    class="btn-gradient w-full py-3 px-4 rounded-lg text-white font-semibold flex items-center justify-center"
+                >
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                    </svg>
+                    Access Dashboard
+                </button>
+                
+                <div class="text-center text-sm text-gray-500">
+                    <p>Need help? <a href="#" class="text-purple-600 hover:underline">Contact support</a></p>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Footer wave -->
+        <div class="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-purple-400 to-indigo-500"></div>
+    </div>
+
+    <script>
+        // Create floating particles
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = window.innerWidth < 768 ? 15 : 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const posX = Math.random() * window.innerWidth;
+                const posY = Math.random() * window.innerHeight;
+                const opacity = Math.random() * 0.2 + 0.1;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 10 + 10;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}px`;
+                particle.style.top = `${posY}px`;
+                particle.style.opacity = opacity;
+                particle.style.animation = `floating ${duration}s ease-in-out ${delay}s infinite`;
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Add input focus effect
+            const inputField = document.querySelector('input[name="name"]');
+            inputField.addEventListener('focus', function() {
+                this.parentElement.querySelector('svg').classList.add('text-purple-500');
+                this.style.paddingLeft = '2.5rem';
+            });
+            
+            inputField.addEventListener('blur', function() {
+                this.parentElement.querySelector('svg').classList.remove('text-purple-500');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        p {
+            margin: 5px 0;
+            color: #555;
+        }
+        h3 {
+            margin-top: 20px;
+            color: #6c63ff;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            text-align: left;
+        }
+        li {
+            background: #e7eaf3;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #6c63ff;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #4f46e5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Hello, {{ data.name }}</h2>
+        <p><strong>Referral Code:</strong> {{ data.referral_code }}</p>
+        <p><strong>Total Donations:</strong> ₹{{ data.donation_amount }}</p>
+
+        <h3>Rewards</h3>
+        <ul>
+            {% for reward in data.rewards %}
+                <li>{{ reward }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/leaderboard">View Leaderboard</a>
+    </div>
+</body>
+</html>

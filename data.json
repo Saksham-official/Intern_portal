@@ -1,0 +1,24 @@
+{
+  "name": "Saksham Goel",
+  "referral_code": "saksham2025",
+  "donation_amount": 1250,
+  "rewards": [
+    "E-Certificate of Appreciation",
+    "Instagram Shoutout",
+    "Gift Card worth rs 100",
+    "Top Performer Badge",
+    "Exclusive Internship Mentorship"
+  ],
+  "leaderboard": [
+    { "name": "Aarav Mehta", "donation": 3000 },
+    { "name": "Saksham Goel", "donation": 1250 },
+    { "name": "Priya Sharma", "donation": 950 },
+    { "name": "Ananya Verma", "donation": 870 },
+    { "name": "Ishaan Patel", "donation": 820 },
+    { "name": "Tanvi Joshi", "donation": 760 },
+    { "name": "Rohan Gupta", "donation": 700 },
+    { "name": "Jatin Yadav", "donation": 650 },
+    { "name": "Devansh Singh", "donation": 580 },
+    { "name": "Neha Kapoor", "donation": 500 }
+  ]
+}
