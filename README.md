@@ -90,6 +90,12 @@ python app.py
 http://localhost:5000
 ```
 
+
+## 🌐 Live Demo
+
+🔗 [Click to view the live app](https://intern-portal-j7k5.onrender.com/)
+
+
 ---
 
 ## 📚 What I Learned
