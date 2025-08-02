@@ -59,6 +59,7 @@ Being selected by She Can Foundation means more than a certificate — it's a ch
 ---
 
 ## 📁 Folder Structure
+```
 intern_portal/
 │
 ├── app.py # Flask server file
@@ -70,7 +71,7 @@ intern_portal/
 ├── static/ # CSS styles
 │ └── style.css
 ├── README.md
-
+```
 
 ---
 
